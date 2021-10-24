@@ -1,0 +1,12 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import 'components/navbar.scss';
+@import 'layout/body.scss'

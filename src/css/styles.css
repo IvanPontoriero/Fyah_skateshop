@@ -1,0 +1,52 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.header--container {
+  display: flex;
+  background: #FFF;
+  width: 100vw;
+  margin: 0;
+  padding: 0; }
+  .header--container .nav--container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100vw; }
+    .header--container .nav--container .nav {
+      width: 100vw;
+      justify-content: space-around; }
+    .header--container .nav--container .navmenu {
+      display: flex;
+      height: 100%;
+      gap: 2rem;
+      list-style: none;
+      text-decoration: none;
+      align-items: center;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.8rem;
+      cursor: pointer; }
+      .header--container .nav--container .navmenu .nav-link {
+        color: #000; }
+    .header--container .nav--container .nav--aside {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 1.5rem;
+      color: rgba(24, 24, 24, 0.808);
+      cursor: pointer; }
+
+.welcome {
+  padding: 2rem;
+  font-size: 3rem;
+  text-align: center; }
+  .welcome #welcome--name {
+    background: radial-gradient(#fd7e14, #dc3545);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; }
