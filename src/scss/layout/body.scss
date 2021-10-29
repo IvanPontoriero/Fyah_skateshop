@@ -8,3 +8,14 @@
         -webkit-background-clip: text;
     } 
 }
+
+.item__list--container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 2rem;
+    gap: 5rem;
+    justify-content: center;
+    .item--container {
+        padding: 5rem;
+    }
+}
