@@ -73,7 +73,6 @@ html {
   background: lightgray;
   opacity: .8;
   border: #000;
-  border-radius: 5px;
   font-size: 1rem; }
 
 .label--counter {
