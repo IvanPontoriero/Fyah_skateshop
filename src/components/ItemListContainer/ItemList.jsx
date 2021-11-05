@@ -1,9 +1,13 @@
 import Item from './Item.jsx';
+import Spinner from 'react-bootstrap/Spinner';
 
-const ItemList = () => {
+const ItemList = ({items, preload}) => {
+
     return (
         <div className='item__list--container'>
-            <Item />
+            { preload ? <Spinner animation="grow" variant="dark" /> : items.map((prod) => {
+                return <Item key={prod.id} item={prod} />
+            })}
         </div>
     )
 }
