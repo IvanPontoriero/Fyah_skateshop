@@ -51,13 +51,13 @@ html {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text; }
 
-.item__list--container {
+.item__list--container, .item__detail--container {
   display: flex;
   flex-flow: row wrap;
   padding: 2rem;
   gap: 5rem;
   justify-content: center; }
-  .item__list--container .item--container {
+  .item__list--container .item--container, .item__detail--container .item--container {
     padding: 5rem; }
 
 .item--counter {
@@ -80,7 +80,7 @@ html {
   text-align: center;
   font-weight: bold; }
 
-.onAdd__btn {
+.onAdd__btn, .detail__btn {
   background: #ffc107;
   color: #000;
   border: #000;
@@ -88,3 +88,6 @@ html {
   margin-top: 2rem;
   padding: 1rem;
   font-size: 1.2rem; }
+
+.detail__btn {
+  font-weight: bold; }

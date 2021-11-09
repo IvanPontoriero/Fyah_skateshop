@@ -31,3 +31,8 @@
     padding: 1rem;
     font-size: 1.2rem;
 } 
+
+.detail__btn {
+    @extend .onAdd__btn;
+    font-weight: bold;
+}

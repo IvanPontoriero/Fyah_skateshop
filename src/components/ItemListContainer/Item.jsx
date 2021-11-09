@@ -1,4 +1,3 @@
-import ItemCount from '../ItemCount/ItemCount.jsx';
 import Card from 'react-bootstrap/Card';
 
 const Item = ({item}) => {
@@ -11,8 +10,8 @@ const Item = ({item}) => {
                     Precio: ${item.price} <br/>
                     {item.description}
                 </Card.Text>
-                <ItemCount title={item.name} stock={item.stock} initial={0}/>
-                {/*<button className='btn__detalle'>Ver detalle</button>*/}
+                {/*<ItemCount title={item.name} stock={item.stock} initial={0}/>*/}
+                <button className='detail__btn' >Ver detalle</button>
             </Card.Body>
         </Card>
     )

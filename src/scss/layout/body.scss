@@ -19,3 +19,7 @@
         padding: 5rem;
     }
 }
+
+.item__detail--container {
+    @extend .item__list--container;
+}
