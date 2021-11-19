@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemList from './ItemList.jsx';
 // import PropTypes from 'prop-types puede ser usada para verificar el tipo de propiedad a pasar a un component e indicar si es requerida 
 // e.g. ItemListContainer.PropTypes = { greeting: PropTypes.number.isRequired } 
@@ -14,6 +15,7 @@ const products = [
         price: 101000,
         description: "Cage 2 Stussy Fossil",
         img: NikeXStussyAirZoom,
+        categoria: 'zapatillas',
         stock: 1
     },
     {
@@ -23,6 +25,7 @@ const products = [
         price: 14000,
         description: "Black",
         img: NikeXStussyIntTee,
+        categoria: 'remeras',
         stock: 5
     },
     {
@@ -32,6 +35,7 @@ const products = [
         price: 34000,
         description: "Black",
         img: NikeXStussyIntCN,
+        categoria: 'hoodies-zippers',
         stock: 3
     }
 ];
@@ -48,11 +52,20 @@ const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([]);
     const [preloader, setPreloader] = useState(true);
 
+    const {categoryId} = useParams();
+
     useEffect(() => {
-        getProducts
-        .then((res) => setProducts(res))
-        .finally(() => setPreloader(false));
-    }, [])
+        if(categoryId) {
+            getProducts
+            .then((res) => setProducts(res.filter(prod => prod.categoria === categoryId)))
+            .finally(() => setPreloader(false));
+
+        } else {
+            getProducts
+            .then((res) => setProducts(res))
+            .finally(() => setPreloader(false));
+        }
+    }, [categoryId])
 
     return (
         <>

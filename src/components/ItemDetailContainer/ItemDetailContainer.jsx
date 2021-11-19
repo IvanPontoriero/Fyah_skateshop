@@ -13,6 +13,7 @@ const products = [
         price: 101000,
         description: "Cage 2 Stussy Fossil",
         img: NikeXStussyAirZoom,
+        categoria: 'zapatillas',
         stock: 1
     },
     {
@@ -22,6 +23,7 @@ const products = [
         price: 14000,
         description: "Black",
         img: NikeXStussyIntTee,
+        categoria: 'remeras',
         stock: 5
     },
     {
@@ -31,14 +33,17 @@ const products = [
         price: 34000,
         description: "Black",
         img: NikeXStussyIntCN,
+        categoria: 'hoodies-zippers',
         stock: 3
     }
 ];
 
 const ItemDetailContainer = () => {
 
-    const {id} = useParams()
+    const {id} = useParams();
+
     const [items, setItems] = useState({});
+    const [loading, setLoading] = useState(true);
     
     useEffect(() => {
         const getItems = new Promise((resolve, reject) => {
@@ -47,15 +52,15 @@ const ItemDetailContainer = () => {
             }, 2000);
         });
         getItems.then((resolve) => {
-            setItems(resolve.filter(item => item.id === 0))
+            setItems(resolve.find(item => item.id === parseInt(id)))
             console.log('container', resolve);
         })
-        //   .catch((err) => console.log(err))
-        //   .finally(() => setLoading(false));
+          .catch((err) => console.log(err))
+          .finally(() => setLoading(false));
     }, [id]);
     return (
         <div className='item__detail--container'>
-            <ItemDetail item={ items } />
+            <ItemDetail item={ items } load={loading}/>
         </div>
     )
 };

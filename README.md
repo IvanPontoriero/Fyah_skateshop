@@ -1,8 +1,25 @@
+# FYAH SKATESHOP
+***
+FYAH SKATESHOP is a digital store for the sale of skateboarding items, developed in order to learn and improve myself in the use of ReactJS.
+***
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Table of Contents
+1. [General Info](#general-info)
+2. [Available Scripts](#available-scripts)
+3. [Technologies](#technologies)
+4. [Installation](#installation)
+4. [Collaboration](#collaboration)
+
+## General Info
+
+Currently, the project is under development. Inside it we can find a main navigation menu and the product catalog with the details of each one (this catalog will be expanded soon). It is necessary to continue with the development of functionalities and the loading of data on the site.
+
 ## Available Scripts
+***
 
 In the project directory, you can run:
 
@@ -39,32 +56,34 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+### `npm run watch-css`
+
+Watch at the main SCSS file to compile it into a CSS file. Run it everytime you make changes to the .scss files.
+
+### `npm run build-css`
+
+Helper for building/minifying SASS and CSS files. It makes it super easy to compile SASS, concatenate all the CSS, and minify the output.
+
+
+## Technologies/Dependencies
+***
+
+List of technologies used within the project:
+* [React-Bootstrap](https://react-bootstrap.netlify.app/)
+* [React-Icons](https://react-icons.github.io/react-icons/)
+* [React-Router-DOM](https://reactrouter.com/)
+
+## Instalation
+***
+
+To work on the project you will need to make a local clone of the repository, to do this, follow the following steps:
+1. git clone https://github.com/IvanPontoriero/Fyah_skateshop.git
+2. cd fyah-skateshop
+3. npm install
+4. npm start
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
