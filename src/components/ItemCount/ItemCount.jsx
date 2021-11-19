@@ -1,30 +1,35 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-const ItemCount = ({ title, stock, initial }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
 
     const [count, setCount] = useState(initial);
 
     const sumItem = () => {
-        count < stock ? setCount(count + 1) : alert(`Superaste el stock disponible de ${title}`);
+        if (count < stock) {
+            setCount(count + 1)
+        }
     }
 
     const restItem = () => {
-        count >= 1 ? setCount(count - 1) : alert('No puedes agregar menos de 1 producto');
+        if (count >= 1) {
+            setCount(count - 1)
+        }
     }
 
-    const onAdd = () => {
-        count >= 1 ? alert(`Agregaste ${count} unidades del producto ${title} al carrito`) : alert('Debes seleccionar un producto para añadir al carrito')
+    const canAdd = () => {
+        count >= 1 ? onAdd(count) : alert('Debes seleccionar un producto');
     }
 
     return (
         <>
             <div className='item--counter'>
-                <button className='item--counter__btn' onClick={restItem}> - </button>
+                {count >= 1 ? <button className='item--counter__btn' onClick={restItem}> - </button> 
+                : <button disabled className='item--counter__btn' onClick={restItem}> - </button>}
                 <label className='label--counter'> {count} </label>
-                <button className='item--counter__btn' onClick={sumItem}> + </button>
+                {count !== stock ? <button className='item--counter__btn' onClick={sumItem}> + </button> 
+                : <button disabled className='item--counter__btn' onClick={sumItem}> + </button>}
             </div>
-            <button className='onAdd__btn' onClick={onAdd}>Agregar</button>
+            <button className='onAdd__btn' onClick={canAdd}>Agregar al carrito</button>
         </>
     )
 }

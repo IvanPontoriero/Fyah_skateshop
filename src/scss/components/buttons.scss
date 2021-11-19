@@ -12,7 +12,6 @@
     background: lightgray;
     opacity: .8;
     border: #000;
-    //border-radius: 1px;
     font-size: 1rem;
 }
 
@@ -35,4 +34,9 @@
 .detail__btn {
     @extend .onAdd__btn;
     font-weight: bold;
+}
+
+.irAlCarrito--btn {
+    @extend .onAdd__btn;
+    font-size: 1.4rem;
 }

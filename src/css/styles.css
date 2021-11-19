@@ -32,6 +32,7 @@ html {
       font-size: 1.8rem;
       cursor: pointer; }
       .header--container .nav--container .navmenu .nav-link {
+        text-decoration: none;
         color: #000; }
     .header--container .nav--container .nav--aside {
       display: flex;
@@ -80,7 +81,7 @@ html {
   text-align: center;
   font-weight: bold; }
 
-.onAdd__btn, .detail__btn {
+.onAdd__btn, .detail__btn, .irAlCarrito--btn {
   background: #ffc107;
   color: #000;
   border: #000;
@@ -91,3 +92,6 @@ html {
 
 .detail__btn {
   font-weight: bold; }
+
+.irAlCarrito--btn {
+  font-size: 1.4rem; }
