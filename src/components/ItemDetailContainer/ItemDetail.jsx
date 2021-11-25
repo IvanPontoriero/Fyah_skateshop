@@ -1,17 +1,21 @@
 import { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount.jsx';
-import GoToCart from '../GoToCart/GoToCart';
+import GoToCart from '../Cart/GoToCart';
+import { useCartContext } from '../../context/CartContext';
 import Spinner from 'react-bootstrap/Spinner';
 import Card from 'react-bootstrap/Card';
 
 const ItemDetail = ({item, load}) => {
 
-    const [clicked, setClicked] = useState(false)
+    const [clicked, setClicked] = useState(false);
+    const { cart, addToCart } = useCartContext();
 
-    const handleAdd = (quantity) => {
-        console.log(quantity);
+    const handleAdd = (quant) => {
         setClicked(true);
+        addToCart({...item, quantity: quant});
+        console.log('cantidad: ' + quant);
     }
+    console.log(cart);
 
     return (
         <>

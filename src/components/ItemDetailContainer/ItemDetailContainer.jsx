@@ -43,9 +43,15 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
 
     const [items, setItems] = useState({});
+    const [prod, setProd] = useState({});
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
+
+        // const dbQuery = getFirestore(); //conexion con firestore
+        // dbQuery.collection('items').doc('ZbDHTtWsL8vo1CBj7Gmq').get() //traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
+        // .then(res => setProd({ id: res.id, ...res.data()}));
+
         const getItems = new Promise((resolve, reject) => {
             setTimeout(() => {
                 products ? resolve(products) : reject("error 404")

@@ -55,6 +55,13 @@ const ItemListContainer = ({greeting}) => {
     const {categoryId} = useParams();
 
     useEffect(() => {
+
+        const dbQuery = getFirestore(); //conexion con firestore
+        dbQuery.collection('items').get() //traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
+        .then(data => setProducts( data.docs.map(prod => ({ categoryId: prod.categoryId, ...prod.data()}))))
+        .catch()
+        .finally({/*loading*/})
+
         if(categoryId) {
             getProducts
             .then((res) => setProducts(res.filter(prod => prod.categoria === categoryId)))
