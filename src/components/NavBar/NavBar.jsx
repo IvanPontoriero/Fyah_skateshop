@@ -4,11 +4,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useCartContext } from '../../context/CartContext.jsx'
 import CartWidget from './CartWidget.jsx';
 import FYAH from '../../assets/FYAH.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = () => {
+    const {} = useCartContext();
     return (
         <header className='header--container'>
             <div className='nav--container'>
@@ -37,7 +39,7 @@ const NavBar = () => {
                             <Nav.Link eventKey={2} >
                                 Registrarme
                             </Nav.Link>
-                            <CartWidget />
+                            <Link to='/cart'><CartWidget /></Link>
                         </Nav>
                     </Navbar.Collapse>
                     </Container>

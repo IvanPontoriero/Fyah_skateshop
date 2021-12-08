@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount.jsx';
 import GoToCart from '../Cart/GoToCart';
+import SeguirComprando from '../ItemDetailContainer/SeguirComprando';
 import { useCartContext } from '../../context/CartContext';
 import Spinner from 'react-bootstrap/Spinner';
 import Card from 'react-bootstrap/Card';
@@ -8,11 +9,11 @@ import Card from 'react-bootstrap/Card';
 const ItemDetail = ({item, load}) => {
 
     const [clicked, setClicked] = useState(false);
-    const { cart, addToCart } = useCartContext();
+    const { cart, addItem } = useCartContext();
 
     const handleAdd = (quant) => {
         setClicked(true);
-        addToCart({...item, quantity: quant});
+        addItem({...item, quantity: quant});
         console.log('cantidad: ' + quant);
     }
     console.log(cart);
@@ -28,9 +29,12 @@ const ItemDetail = ({item, load}) => {
                             {item.description}
                         </Card.Text>
                         { clicked ? (
-                        <GoToCart /> 
+                        <div>
+                            <GoToCart /> 
+                            <SeguirComprando />
+                        </div>
                         ) : (
-                        <ItemCount title={item.name} stock={item.stock} initial={0} onAdd={handleAdd} />
+                        <ItemCount title={item.name} stock={item.stock} initial={1} onAdd={handleAdd} />
                         )}
                     </Card.Body>
             </Card>}

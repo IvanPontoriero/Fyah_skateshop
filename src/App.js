@@ -8,16 +8,18 @@ import './css/styles.css';
 
 function App() {
   return (
+    <CartContextProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
           <Route exact path='/' element={<ItemListContainer greeting='Adri' />}></Route>
           <Route exact path='/categoria/:categoryId' element={<ItemListContainer greeting='Adri' />}></Route>
           <Route exact path='/item/:id' element={<ItemDetailContainer />}></Route>
-          {/* <Route exact path='/cart' element={<Cart />}></Route> */}
+          <Route exact path='/cart' element={<Cart />}></Route>
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

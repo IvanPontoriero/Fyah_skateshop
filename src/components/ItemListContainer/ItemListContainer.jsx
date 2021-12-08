@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { getFirestore } from '../../service/getFirestore.js';
 import ItemList from './ItemList.jsx';
 // import PropTypes from 'prop-types puede ser usada para verificar el tipo de propiedad a pasar a un component e indicar si es requerida 
 // e.g. ItemListContainer.PropTypes = { greeting: PropTypes.number.isRequired } 
@@ -56,11 +57,11 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
 
-        const dbQuery = getFirestore(); //conexion con firestore
-        dbQuery.collection('items').get() //traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
-        .then(data => setProducts( data.docs.map(prod => ({ categoryId: prod.categoryId, ...prod.data()}))))
-        .catch()
-        .finally({/*loading*/})
+        // const dbQuery = getFirestore(); //conexion con firestore
+        // dbQuery.collection('items').get() //traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
+        // .then(data => setProducts( data.docs.map(prod => ({ categoryId: prod.categoryId, ...prod.data()}))))
+        // .catch()
+        // .finally({/*loading*/})
 
         if(categoryId) {
             getProducts
