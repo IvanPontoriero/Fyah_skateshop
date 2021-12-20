@@ -9,11 +9,8 @@ import { GiBroom } from 'react-icons/gi';
 
 const Cart = () => {
     
-    const { cart, removeItem, clear, totalPrice } = useCartContext();
+    const { cart, removeItem, clear, precioTotal } = useCartContext();
     const [ modal, setModal ] = useState(false);
-
-    console.log('Soy  el cart', cart)
-    console.log(totalPrice())
 
     return (
         <>
@@ -57,7 +54,7 @@ const Cart = () => {
                     <div className='cart__resume'>
                         <h3>RESUMEN DEL PEDIDO</h3>
                         <p>{cart.quant} Productos</p>
-                        <p className='cart--subtitle'>Total ${totalPrice}</p>
+                        <p className='cart--subtitle'>Total ${precioTotal}</p>
                         <Button className='clear__cart--btn' onClick={clear}>Limpiar carrito <GiBroom/></Button>
                         <Button variant="dark" onClick={() => setModal(true)}>Finalizar compra</Button>
                         <ModalComponent show={modal} onHide={() => setModal(false)}/>

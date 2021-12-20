@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/IvanPontoriero/Fyah_skateshop/static/css/main.c7120988.chunk.css",
+    "main.js": "/IvanPontoriero/Fyah_skateshop/static/js/main.6a2f85c3.chunk.js",
+    "main.js.map": "/IvanPontoriero/Fyah_skateshop/static/js/main.6a2f85c3.chunk.js.map",
+    "runtime-main.js": "/IvanPontoriero/Fyah_skateshop/static/js/runtime-main.555539bf.js",
+    "runtime-main.js.map": "/IvanPontoriero/Fyah_skateshop/static/js/runtime-main.555539bf.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/IvanPontoriero/Fyah_skateshop/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.d88975bf.chunk.js": "/IvanPontoriero/Fyah_skateshop/static/js/2.d88975bf.chunk.js",
+    "static/js/2.d88975bf.chunk.js.map": "/IvanPontoriero/Fyah_skateshop/static/js/2.d88975bf.chunk.js.map",
+    "static/js/3.f2e71474.chunk.js": "/IvanPontoriero/Fyah_skateshop/static/js/3.f2e71474.chunk.js",
+    "static/js/3.f2e71474.chunk.js.map": "/IvanPontoriero/Fyah_skateshop/static/js/3.f2e71474.chunk.js.map",
+    "index.html": "/IvanPontoriero/Fyah_skateshop/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/IvanPontoriero/Fyah_skateshop/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.c7120988.chunk.css.map": "/IvanPontoriero/Fyah_skateshop/static/css/main.c7120988.chunk.css.map",
+    "static/js/2.d88975bf.chunk.js.LICENSE.txt": "/IvanPontoriero/Fyah_skateshop/static/js/2.d88975bf.chunk.js.LICENSE.txt",
+    "static/media/FYAH.01e38b8d.png": "/IvanPontoriero/Fyah_skateshop/static/media/FYAH.01e38b8d.png",
+    "static/media/nb-banner.5a78c0fd.jpg": "/IvanPontoriero/Fyah_skateshop/static/media/nb-banner.5a78c0fd.jpg",
+    "static/media/nike-x-stussy-banner.d19b4502.jpg": "/IvanPontoriero/Fyah_skateshop/static/media/nike-x-stussy-banner.d19b4502.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.555539bf.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.d88975bf.chunk.js",
+    "static/css/main.c7120988.chunk.css",
+    "static/js/main.6a2f85c3.chunk.js"
+  ]
+}
