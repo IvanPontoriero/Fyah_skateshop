@@ -38,6 +38,12 @@ export const CartContextProvider = ({children}) => {
     }
 
     useEffect(() => {
+        let total = 0;
+        let cantTotal = 0;
+        for(let cartItem of cart) {
+            cantTotal += cartItem.cant;
+            precio += cartItem.cant
+        }
         console.log(cart)
     }, [cart]);
 

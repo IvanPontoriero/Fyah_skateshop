@@ -6,7 +6,7 @@ const ItemList = ({items, preload}) => {
     return (
         <div className='item__list--container'>
             { preload ? <Spinner animation="grow" variant="dark" /> : items.map((prod) => {
-                return <Item key={prod.id} item={prod} />
+                return <Item key={prod.id} item={prod} preload={preload}/>
             })}
         </div>
     )

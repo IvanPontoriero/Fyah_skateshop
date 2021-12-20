@@ -1,0 +1,21 @@
+.item__list--title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.item__list--body {
+    font-size: 1.3rem;
+    color: gray;
+}
+
+.item__detail--container {
+    display: flex;
+    width: 100vw;
+    flex-flow: row wrap;
+    .item__detail--img {
+        width: 60vw;
+    }
+    .item__detail--description{
+        width: 40vw;
+    }
+}

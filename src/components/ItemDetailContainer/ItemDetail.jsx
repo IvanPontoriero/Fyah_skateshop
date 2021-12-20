@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { useCartContext } from '../../context/CartContext';
 import ItemCount from '../ItemCount/ItemCount.jsx';
 import GoToCart from '../Cart/GoToCart';
 import SeguirComprando from '../ItemDetailContainer/SeguirComprando';
-import { useCartContext } from '../../context/CartContext';
 import Spinner from 'react-bootstrap/Spinner';
 import Card from 'react-bootstrap/Card';
 
@@ -13,31 +13,35 @@ const ItemDetail = ({item, load}) => {
 
     const handleAdd = (quant) => {
         setClicked(true);
-        addItem({...item, quantity: quant});
+        addItem({...item, quant});
         console.log('cantidad: ' + quant);
     }
     console.log(cart);
 
     return (
         <>
-            {load ? <Spinner animation="grow" variant="dark" /> : <Card key={ item.id } border="warning" style={{ width: '30rem' }} className='item--container'>
-                <Card.Img variant="top" src={item.img}  alt='imagen del producto'/>
-                <Card.Body>
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
-                            Precio: ${item.price} <br/>
-                            {item.description}
-                        </Card.Text>
-                        { clicked ? (
+            {load ? <Spinner animation="grow" variant="dark" /> 
+            : <div className='item__detail--container' key={item.id}>
+                <div className='item__detail--img'>
+                    <img src={item.img}/>
+                </div>
+                <div className='item__detail--description'>
+                    <p>{item.category}</p><br/><br/>
+                    <h2>{item.name}</h2>
+                    <h4>{item.price}</h4>
+                    <p>Podés pagar en 3 cuotas de {item.price / 3}</p>
+                </div>
+                <div className='item__detail--btns'>
+                    { clicked ? (
                         <div>
                             <GoToCart /> 
                             <SeguirComprando />
                         </div>
                         ) : (
-                        <ItemCount title={item.name} stock={item.stock} initial={1} onAdd={handleAdd} />
-                        )}
-                    </Card.Body>
-            </Card>}
+                            <ItemCount title={item.name} stock={item.stock} initial={1} onAdd={handleAdd} />
+                    )}
+                </div>
+            </div>}
         </>
     )
 };

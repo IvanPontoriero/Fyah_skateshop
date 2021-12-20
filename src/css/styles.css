@@ -7,6 +7,9 @@ html {
   padding: 0;
   box-sizing: border-box; }
 
+body {
+  font-family: 'Neue Plak', sans-serif; }
+
 .header--container {
   display: flex;
   background: #FFF;
@@ -57,16 +60,25 @@ html {
   flex-flow: row wrap;
   padding: 2rem;
   gap: 5rem;
-  justify-content: center; }
-  .item__list--container .item--container, .item__detail--container .item--container {
-    padding: 5rem; }
+  justify-content: center;
+  font-family: 'Neue Plak', sans-serif; }
+  .item__list--container a, .item__detail--container a {
+    text-decoration: none;
+    color: #000; }
+  .item__list--container .item--container:hover, .item__detail--container .item--container:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 7px 5px rgba(115, 115, 115, 0.75);
+    -webkit-box-shadow: 0px 0px 7px 5px rgba(115, 115, 115, 0.75);
+    -moz-box-shadow: 0px 0px 7px 5px rgba(115, 115, 115, 0.75);
+    transition: box-shadow 200ms; }
 
 .item--counter {
   display: flex;
   width: 30%;
   flex-flow: row wrap;
   border: 2px solid #ffc107;
-  border-radius: 5px; }
+  border-radius: 5px;
+  box-shadow: lightgray; }
 
 .item--counter__btn {
   width: 33.33%;
@@ -95,3 +107,20 @@ html {
 
 .irAlCarrito--btn {
   font-size: 1.4rem; }
+
+.item__list--title {
+  font-weight: bold;
+  font-size: 2rem; }
+
+.item__list--body {
+  font-size: 1.3rem;
+  color: gray; }
+
+.item__detail--container {
+  display: flex;
+  width: 100vw;
+  flex-flow: row wrap; }
+  .item__detail--container .item__detail--img {
+    width: 60vw; }
+  .item__detail--container .item__detail--description {
+    width: 40vw; }

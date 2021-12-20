@@ -16,7 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## General Info
 
-Currently, the project is under development. Inside it we can find a main navigation menu and the product catalog with the details of each one (this catalog will be expanded soon). It is necessary to continue with the development of functionalities and the loading of data on the site.
+Currently, the project is under development. It has a navigation menu, an online store with the details of each product and the shopping cart. It is necessary to continue with the development of functionalities (mainly forms authentication and wish list.) and the loading of data on the site.
 
 ## Available Scripts
 ***
@@ -72,6 +72,7 @@ List of technologies used within the project:
 * [React-Bootstrap](https://react-bootstrap.netlify.app/)
 * [React-Icons](https://react-icons.github.io/react-icons/)
 * [React-Router-DOM](https://reactrouter.com/)
+* [Firebase](https://firebase.google.com/?hl=es)
 
 ## Instalation
 ***

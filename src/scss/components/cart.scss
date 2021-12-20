@@ -1,0 +1,12 @@
+.cart--header {
+    display: flex;
+    flex-flow: flex wrap;
+}
+.itemCartTable {
+    display: grid;
+    grid-template-columns: 4fr 5fr 2fr 1fr;
+    .imgCol {
+        transform: scale(0.3,0.3)
+        
+    }
+}

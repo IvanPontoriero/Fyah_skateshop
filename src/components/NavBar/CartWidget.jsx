@@ -1,9 +1,20 @@
 import React from 'react';
 import { GiShoppingBag } from 'react-icons/gi';
+import { Link } from "react-router-dom";
+import { useCartContext } from '../../context/CartContext';
 
-class CartWidget extends React.Component {
-    render () {
-        return <><GiShoppingBag /></>
-    }
+const CartWidget = () => {
+        const { cartLength } = useCartContext();
+        return <>
+        { cartLength === 0 && <span></span>}
+        { cartLength > 0 && 
+            <Link to='/cart'>
+                <GiShoppingBag />
+                <span className='show__length'>
+                    { cartLength }
+                </span>
+            </Link>
+        }
+        </>
 }
 export default CartWidget;
