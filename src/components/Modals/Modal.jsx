@@ -13,26 +13,25 @@ const ModalComponent = (props) => {
     const [orderID, setOrderID] = useState(null); 
    
     const generarOrden = (e) => {
-            e.preventDefault()
-            const buyer = { name, phone, email };
-            const db = getFirestore();
-            const ordersCollection = db.collection("orders");
+        e.preventDefault()
+        const buyer = { name, phone, email };
+        const db = getFirestore();
+        const ordersCollection = db.collection("orders");
 
-            let order = {};
-            order.buyer = {buyer};
-            order.total = totalPrice;
-            order.items = cart.map((cartItem) => {
-                const id = cartItem.item.id;
-                const title = cartItem.item.title;
-                return {id, title}
-            })
+        let order = {};
+        order.buyer = {buyer};
+        order.total = totalPrice;
+        order.items = cart.map((cartItem) => {
+            const id = cartItem.item.id;
+            const title = cartItem.item.title;
+            return {id, title}
+        })
 
-            ordersCollection.add(order)
-            .then((IdDocument) => {
-                setOrderID(IdDocument.id)
-            })
-console.log('idOrden', orderID);
-
+        ordersCollection.add(order)
+        .then((IdDocument) => {
+            setOrderID(IdDocument.id)
+        })
+        console.log('idOrden', orderID);
     }
 
     return (
@@ -56,7 +55,7 @@ console.log('idOrden', orderID);
                             type="text"
                              onChange={(e) => setEmail(e.target.value)}
                         />
-                        <label>Telefono2</label>
+                        <label>Telefono</label>
                         <input
                             value={phone}
                             type="text"

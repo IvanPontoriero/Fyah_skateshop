@@ -4,8 +4,6 @@ import ItemCount from '../ItemCount/ItemCount.jsx';
 import GoToCart from '../Cart/GoToCart';
 import SeguirComprando from '../ItemDetailContainer/SeguirComprando';
 import Spinner from 'react-bootstrap/Spinner';
-import Card from 'react-bootstrap/Card';
-
 const ItemDetail = ({item, load}) => {
 
     const [clicked, setClicked] = useState(false);
@@ -23,7 +21,7 @@ const ItemDetail = ({item, load}) => {
             {load ? <Spinner animation="grow" variant="dark" /> 
             : <div className='item__detail--container' key={item.id}>
                 <div className='item__detail--img'>
-                    <img src={item.img}/>
+                    <img src={item.img} alt='imagen del producto'/>
                 </div>
                 <div className='item__detail--description'>
                     <p>{item.category}</p><br/><br/>

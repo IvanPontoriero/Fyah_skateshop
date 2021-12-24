@@ -35,7 +35,7 @@ const NavBar = () => {
                         </Nav>
                         <Nav className='nav--aside'>
                             <Nav.Link >Ingresar</Nav.Link>
-                            <Nav.Link eventKey={2} >
+                            <Nav.Link eventKey={2} to=''>
                                 Registrarme
                             </Nav.Link>
                             <Link to='/cart'><CartWidget /></Link>

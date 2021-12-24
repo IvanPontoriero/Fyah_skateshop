@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {useCartContext} from '../../context/CartContext';
-import ModalComponent from '../Modal/Modal';
+import ModalComponent from '../Modals/Modal';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { GrFormClose } from 'react-icons/gr';
@@ -45,7 +45,7 @@ const Cart = () => {
                         <p>${item.item.price }</p>
                     </div>
                     <div>
-                        <a className='delete__item--btn' onClick={() => removeItem(item, item.item.quantity)}><GrFormClose/></a>
+                        <button className='delete__item--btn' onClick={() => removeItem(item, item.item.quantity)}><GrFormClose/></button>
                         <AiOutlineHeart/>
                     </div>
                 </div> 
