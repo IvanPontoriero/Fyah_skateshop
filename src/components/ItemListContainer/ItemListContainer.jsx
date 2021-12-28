@@ -15,35 +15,15 @@ const ItemListContainer = ({greeting}) => {
     useEffect(() => {
 
         const dbQuery = getFirestore(); //conexion con firestore
-        const itemCollection = dbQuery.collection('items');
-        dbQuery.collection('items').get() //traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
-        .then(data => setProducts( data.docs.map(prod => ({ categoryId: prod.categoryId, ...prod.data()}))))
-        .catch()
-        .finally(() => setPreloader(false))
+        const itemCollection = categoryId 
+            ? dbQuery.collection('items').where("categoria", "==", categoryId)
+            : dbQuery.collection('items');
+        itemCollection
+            .get()//traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
+            .then(data => setProducts( data.docs.map((prod) => ({ categoryId: prod.categoryId, ...prod.data()}))))
+            .catch((err) => console.log(err))
+            .finally(() => setPreloader(false))
 
-        if(categoryId) {
-            itemCollection.where("categoryId", "==", categoryId).get()
-            .then((snapshot) => {
-                if (snapshot.size > 0) {
-                    setProducts(
-                        snapshot.docs.map((doc) => {
-                            return { id: doc.id, ...doc.data() };
-                        })
-                    );
-                }
-            });
-        } else {
-            itemCollection.get()
-            .then((snapshot) => {
-                if (snapshot.size > 0) {
-                    setProducts(
-                        snapshot.docs.map((doc) => {
-                            return { id: doc.id, ...doc.data() };
-                        })
-                    );
-                }
-            });
-        }
     }, [categoryId])
 
     return (

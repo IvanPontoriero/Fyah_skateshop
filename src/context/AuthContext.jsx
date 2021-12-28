@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext, useContext } from 'react';
-import { auth, google } from '../../service/getFirestore.js';
+import { auth, google } from '../service/getFirestore.js';
 
 export const AuthContext = createContext();
 
@@ -95,7 +95,7 @@ export const AuthContextProvider = ({children}) => {
             setLoading(false);
         });
         return unsuscribe;
-    }, [wishlist]);
+    }, [wishList]);
 
     return (
         <>

@@ -5,8 +5,8 @@ import { FcGoogle } from 'react-icons/fc';
 
 const SignUp = () => {
 
-    const { error, setName, mensajeError, mensajeSuccess, success, createUser, 
-        setEmail, setPassword, setPasswordValidation } = useAuthContext();
+    const { error, name, setName, mensajeError, mensajeSuccess, success, createUser, email, 
+        setEmail, password, setPassword, passwordValidation, setPasswordValidation } = useAuthContext();
 
     return (
         <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered>

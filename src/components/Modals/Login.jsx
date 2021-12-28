@@ -1,10 +1,11 @@
 import { useAuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal';
 import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
     
-    const { setEmail, setPassword, login, loginGoogle } = useAuthContext();
+    const { email, setEmail, password, setPassword, login, loginGoogle } = useAuthContext();
 
     return (
         <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered>

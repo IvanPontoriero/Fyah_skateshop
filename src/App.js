@@ -25,7 +25,6 @@ function App() {
           <Route exact path='/cart' element={<Cart />}></Route>
           <Route exact path='/login' component={<Login />}></Route>
           <Route exact path='/sign-up' component={<SignUp />}></Route>
-          <Route exact path='/wishlist' component={<WishList />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
