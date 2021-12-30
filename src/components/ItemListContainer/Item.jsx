@@ -15,7 +15,7 @@ const Item = ({item}) => {
     }
 
     const delWishList = () => {
-        deleteFromWishList(id)
+        deleteFromWishList(item.id)
         setWishActive(false)
     }
 
