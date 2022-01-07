@@ -11,6 +11,7 @@ const Cart = () => {
     
     const { cart, removeItem, clear, precioTotal } = useCartContext();
     const [ modal, setModal ] = useState(false);
+    console.log('precio total: ' + precioTotal)
 
     return (
         <>
@@ -22,14 +23,14 @@ const Cart = () => {
                 </Link>
             </div> 
         ) : (
-        <div className='cart--container'>
+        <div className='cart--container' key='cart--container'>
         <h1>TU CARRITO</h1>
             <div className='cart--header'>
-                <span>Producto</span>
+                <span>Producto</span> &nbsp;&nbsp;&nbsp;
                 <span>Detalle</span>
             </div>
             {cart.map( item => 
-                <div class='itemCartTable'>
+                <div className='itemCartTable' key={item.id}>
                     <div className='imgCol'><img src={item.item.img} alt={item.item.name}/></div>
                     <div className='centralCol'>
                         <p>
@@ -44,7 +45,7 @@ const Cart = () => {
                         <p>{item.item.description}</p>
                         <p>${item.item.price }</p>
                     </div>
-                    <div>
+                    <div className='cart--btn'>
                         <button className='delete__item--btn' onClick={() => removeItem(item, item.item.quantity)}><GrFormClose/></button>
                         <AiOutlineHeart/>
                     </div>
@@ -53,9 +54,9 @@ const Cart = () => {
                 <div className='cart--aside'>
                     <div className='cart__resume'>
                         <h3>RESUMEN DEL PEDIDO</h3>
-                        <p>{cart.quant} Productos</p>
+                        <p>{cart.quantity} Productos</p>
                         <p className='cart--subtitle'>Total ${precioTotal}</p>
-                        <Button className='clear__cart--btn' onClick={clear}>Limpiar carrito <GiBroom/></Button>
+                        <Button className='clear__cart--btn' onClick={clear}>Limpiar carrito <GiBroom/></Button> &nbsp;&nbsp;&nbsp;
                         <Button variant="dark" onClick={() => setModal(true)}>Finalizar compra</Button>
                         <ModalComponent show={modal} onHide={() => setModal(false)}/>
                     </div>

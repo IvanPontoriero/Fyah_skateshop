@@ -1,12 +1,16 @@
 .cart--header {
     display: flex;
     flex-flow: flex wrap;
+    font-size: 1.5rem;
+    color: black;
 }
 .itemCartTable {
-    display: grid;
-    grid-template-columns: 4fr 5fr 2fr 1fr;
-    .imgCol {
-        transform: scale(0.3,0.3)
-        
-    }
+    display: flex;
+    flex-flow: row wrap;
+    max-height: 200px;
+    //grid-template-columns: 4fr 5fr 2fr 1fr;
+}
+
+.cart--btn {
+    width: 20px;
 }

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getFirestore } from '../../service/getFirestore.js';
 import ItemDetail from './ItemDetail.jsx';
 
+
 const ItemDetailContainer = () => {
 
     const {id} = useParams();
@@ -13,14 +14,11 @@ const ItemDetailContainer = () => {
     useEffect(() => {
 
         const dbQuery = getFirestore(); //conexion con firestore
-        dbQuery.collection('items').doc(id).get() //traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
-        .then(res => {
-            if(res.exists) {
-                setItems({ id: res.id, ...res.data()});
-            }
-        })
+        const items = dbQuery.collection("items").doc(id).get() //traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
+        .then((res) => setItems({ id: res.id, ...res.data()}))
+        .catch((err) => console.log(err))
         .finally(() => setLoading(false));
-        return;
+        return items;
     }, [id]);
     return (
         <div className='item__detail--container'>

@@ -20,7 +20,7 @@ const ItemListContainer = ({greeting}) => {
             : dbQuery.collection('items');
         itemCollection
             .get()//traemos toda la colleccion de datos con .get() y con .doc(#idDelItem) traemos un solo item
-            .then(data => setProducts( data.docs.map((prod) => ({ categoryId: prod.categoryId, ...prod.data()}))))
+            .then(data => setProducts( data.docs.map((prod) => ({ id: prod.id, categoryId: prod.category, ...prod.data()}))))
             .catch((err) => console.log(err))
             .finally(() => setPreloader(false))
 

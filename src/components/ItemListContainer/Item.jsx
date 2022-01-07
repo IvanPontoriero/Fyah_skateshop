@@ -20,7 +20,7 @@ const Item = ({item}) => {
     }
 
     return (
-        <Link to={'/item/' + item.id}>
+        <Link to={`/item/${item.id}`}>
             <Card key={ item.id } border="warning" style={{ width: '30rem' }} className='item--container'>
                 <Card.Img variant="top" src={item.img} /><hr/>
                 <Card.Body>

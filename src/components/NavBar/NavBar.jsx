@@ -19,23 +19,23 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto navmenu" >
-                        <Nav.Link className="nav-item" ><Link to='/' className='nav-link'>Inicio</Link></Nav.Link>
+                        <Nav.Item className="nav-item" ><Link to='/' className='nav-link'>Inicio</Link></Nav.Item>
                         <NavDropdown title="Marcas" id="collasible-nav-dropdown">
-                            <NavDropdown.Item >Nike</NavDropdown.Item>
-                            <NavDropdown.Item >Stussy</NavDropdown.Item>
-                            <NavDropdown.Item >Vans</NavDropdown.Item>
+                            <NavDropdown.Item ><Link  to='/' className='nav-link'>Nike</Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link  to='/' className='nav-link'>Stussy</Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link  to='/' className='nav-link'>Vans</Link></NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Indumentaria" id="collasible-nav-dropdown">
-                            <NavDropdown.Item >Camisas</NavDropdown.Item>
+                            <NavDropdown.Item ><Link to='/categoria/camisas' className='nav-link'>Camisas</Link></NavDropdown.Item>
                             <NavDropdown.Item ><Link to='/categoria/remeras' className='nav-link'>Remeras</Link></NavDropdown.Item>
-                            <NavDropdown.Item >Pantalones</NavDropdown.Item>
+                            <NavDropdown.Item ><Link to='/categoria/pantalones' className='nav-link'>Pantalones</Link></NavDropdown.Item>
                             <NavDropdown.Item ><Link to='/categoria/hoodies-zippers' className='nav-link'>Hoodies/Zippers</Link></NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link className="nav-item" ><Link to='/categoria/zapatillas' className='nav-link'>Zapatillas</Link></Nav.Link>
+                        <Nav.Item className="nav-item" ><Link to='/categoria/zapatillas' className='nav-link'>Zapatillas</Link></Nav.Item>
                         </Nav>
                         <Nav className='nav--aside'>
-                            <Nav.Link >Ingresar</Nav.Link>
-                            <Nav.Link eventKey={2} to=''>
+                            <Link to='/login'>Ingresar</Link>
+                            <Nav.Link eventKey={2} href='/sign-up'>
                                 Registrarme
                             </Nav.Link>
                             <Link to='/cart'><CartWidget /></Link>

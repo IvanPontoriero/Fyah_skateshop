@@ -8,10 +8,12 @@ html {
     box-sizing: border-box;
 }
 body {
-    font-family: 'Neue Plak', sans-serif;  
+    font-family: 'Neue Plak', sans-serif;
 }
 
 @import 'components/navbar.scss';
+@import 'components/footer.scss';
 @import 'layout/body.scss';
+@import 'components/cart.scss';
 @import 'components/buttons.scss';
 @import 'components/item_container.scss';

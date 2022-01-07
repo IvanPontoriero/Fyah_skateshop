@@ -4,7 +4,7 @@ import { RiCopyrightLine } from 'react-icons/ri';
 const Footer = () => {
     return (
         <div className='footer--container'>
-            <p className='copyright'><RiCopyrightLine/> 2021 Joaquín Pontoriero . FYAH SKATESHOP .</p>
+            <RiCopyrightLine/> &nbsp; 2021 Joaquín Pontoriero ... FYAH SKATESHOP ...
         </div>
     )
 }

@@ -10,7 +10,19 @@ export const CartContextProvider = ({children}) => {
     const [ cartLength, setCartLength]  = useState(0);
     const [ precioTotal, setPrecioTotal ] = useState(0);
 
+    useEffect(() => {
+        let total = 0;
+        let cantTotal = 0;
+        for(let cartItem of cart) {
+            cantTotal += cartItem.quantity;
+            total += cartItem.quantity * cartItem.item.price;
+        };
+        setPrecioTotal(total);
+        setCartLength(cantTotal);
+    }, [cart]);
+
     const addItem = (item, quantity) => {
+
         if (cart.length !== 0) {
             const index = cart.findIndex(obj => { return obj.item.id === item.id; })
             if (index !== -1) {
@@ -25,27 +37,14 @@ export const CartContextProvider = ({children}) => {
         setCartLength(cartLength + quantity);
     }
 
-    const removeItem = (itemId, quantity) => {
-        setCart(cart.filter((item) => item.id !== itemId));
-        setCartLength(cartLength - quantity)
+    const removeItem = (id) => {
+        setCart(cart.filter((i) => i.id !== id))
     }
 
     const clear = () => {
         setCart([]);
     }
 
-    useEffect(() => {
-        let total = 0;
-        let cantTotal = 0;
-        for(let cartItem of cart) {
-            cantTotal += cartItem.cant;
-            total += cartItem.cant * cartItem.item.price;
-        };
-        setPrecioTotal(total);
-        setCartLength(cantTotal);
-    }, [cart]);
-
-    
     return (
         <CartContext.Provider value={{cart, cartLength, precioTotal, addItem, removeItem, clear}}>
             {children}
