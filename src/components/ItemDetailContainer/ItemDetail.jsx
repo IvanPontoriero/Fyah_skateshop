@@ -8,7 +8,7 @@ import Spinner from 'react-bootstrap/Spinner';
 const ItemDetail = ({item, load}) => {
 
     const [clicked, setClicked] = useState(false);
-    const { cart, addItem } = useCartContext();
+    const { addItem } = useCartContext();
 
     const handleAdd = (quant) => {
         setClicked(true);
